@@ -4,7 +4,7 @@ function isPromise (value) {
   return value && typeof value.then === 'function';
 }
 
-export const CALL_API = 'CALL_API';
+export const CALL_API = '@@meadow/CALL_API';
 
 export default function apiMiddleware ({ dispatch }) {
   return next => action => {
