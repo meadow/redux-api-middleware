@@ -1,0 +1,28 @@
+{
+  "name": "@meadow/redux-api-middleware",
+  "version": "1.0.0",
+  "description": "API middlware for redux",
+  "main": "src/middleware.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meadow/redux-api-middleware.git"
+  },
+  "keywords": [
+    "redux",
+    "middleware",
+    "api",
+    "promise",
+    "meadow"
+  ],
+  "authors": [
+    "Rick Harrison <rick@getmeadow.com> (https://github.com/rickharrison)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meadow/redux-api-middleware/issues"
+  },
+  "homepage": "https://github.com/meadow/redux-api-middleware#readme"
+}
