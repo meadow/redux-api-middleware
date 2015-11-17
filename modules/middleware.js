@@ -36,10 +36,12 @@ export default function apiMiddleware ({ dispatch }) {
       }));
 
       return data;
-    }, err => process.nextTick(() => dispatch({
-      type: FAILURE,
-      payload: err,
-      error: true
-    })));
+    }, err => {
+      process.nextTick(() => dispatch({
+        type: FAILURE,
+        payload: err,
+        error: true
+      }));
+    });
   };
 }
