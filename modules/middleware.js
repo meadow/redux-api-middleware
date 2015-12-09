@@ -14,7 +14,7 @@ export default function apiMiddleware ({ dispatch }) {
       return next(action);
     }
 
-    const { types, promise } = definition;
+    const { types, meta, promise } = definition;
     const [REQUEST, SUCCESS, FAILURE] = types;
 
     if (!isPromise(promise)) {
@@ -26,13 +26,15 @@ export default function apiMiddleware ({ dispatch }) {
     }
 
     dispatch({
-      type: REQUEST
+      type: REQUEST,
+      meta
     });
 
     return promise.then(data => {
       process.nextTick(() => dispatch({
         type: SUCCESS,
-        payload: data
+        payload: data,
+        meta
       }));
 
       return data;
@@ -40,7 +42,8 @@ export default function apiMiddleware ({ dispatch }) {
       process.nextTick(() => dispatch({
         type: FAILURE,
         payload: err,
-        error: true
+        error: true,
+        meta
       }));
     });
   };
