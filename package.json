@@ -1,6 +1,6 @@
 {
   "name": "@meadow/redux-api-middleware",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "API middleware for redux",
   "main": "build/middleware.js",
   "scripts": {
