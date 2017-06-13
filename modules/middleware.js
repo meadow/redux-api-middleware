@@ -45,6 +45,8 @@ export default function apiMiddleware ({ dispatch }) {
         error: true,
         meta
       }));
+
+      throw err;
     });
   };
 }
