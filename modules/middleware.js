@@ -31,20 +31,20 @@ export default function apiMiddleware ({ dispatch }) {
     });
 
     return promise.then(data => {
-      process.nextTick(() => dispatch({
+      dispatch({
         type: SUCCESS,
         payload: data,
         meta
-      }));
+      });
 
       return data;
     }, err => {
-      process.nextTick(() => dispatch({
+      dispatch({
         type: FAILURE,
         payload: err,
         error: true,
         meta
-      }));
+      });
 
       throw err;
     });
